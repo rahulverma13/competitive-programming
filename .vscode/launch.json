@@ -1,0 +1,30 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug C++ File", // This is the name that will show up in the debug configurations dropdown
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "../a.out", // Replace with the path to your executable
+            "args": [], // Arguments to pass to your program
+            "stopAtEntry": false, // Whether to stop at the entry point
+            "cwd": "${workspaceFolder}", // Current working directory of the program
+            "environment": [], // Environment variables
+            "externalConsole": false, // Whether to open the program in an external console
+            "MIMode": "gdb", // Set to "lldb" if using LLDB
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build", // Task to run before launching (e.g., build task)
+            "miDebuggerPath": "/usr/bin/gdb", // Path to GDB (adjust if using LLDB)
+            "logging": {
+                "engineLogging": true
+            },
+            "internalConsoleOptions": "openOnSessionStart" // Open internal console when the session starts
+        }
+    ]
+}
